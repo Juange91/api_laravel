@@ -28,13 +28,13 @@ class controller_conversation extends Controller
      */
     public function store(Request $request)
     {
-       
 
+        
 $data = $request;
 $count =  1;  
 $new_file = 'Conversation_'.$data -> conversation_id.'.txt';
 $messages_length = count($data -> messages);
-$conversation = storage_path("app/conversations/$new_file");
+$conversation = storage_path("app/$new_file");
 $file = fopen($conversation, "w");
 fwrite($file, 'Datos recibidos de la campaña'.PHP_EOL );
 fwrite($file, 'rrhh_id: '.$data -> rrhh_id.PHP_EOL );
